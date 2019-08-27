@@ -5,8 +5,7 @@ import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import IconButton from '@material-ui/core/IconButton';
-import img from "../../assets/camera.jpg";
-
+import ProductCard from "components/common/ProductCard";
 
 
 const titleData = [
@@ -188,17 +187,9 @@ export default class TitlebarGridList extends Component{
             <div>
                 <GridList cellHeight={250} cols={8} style={classes.root}>
                     {this.tileData.map((tile, index) => (
-                        <GridListTile key={tile.img + index} style={{"marginBottom": "30px", "width": "250px"}}>
-                            <img src={img} alt={tile.title} />
-                            <GridListTileBar
-                                title={tile.title}
-                                subtitle={<span>by: {tile.author}</span>}
-                                actionIcon={
-                                    <IconButton aria-label={`info about ${tile.title}`} style={classes.icon}>
-                                    </IconButton>
-                                }
-                            />
-                        </GridListTile>
+                        <div key={tile.img + index} style={{"marginBottom": "30px", "width": "250px"}}>
+                            <ProductCard />
+                        </div>
                     ))}
                 </GridList>
             </div>

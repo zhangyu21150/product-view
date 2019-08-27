@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import GridList from "components/common/GridList";
-import SimpleBottomNavigation from "../common/NavMenu"
+import SimpleBottomNavigation from "components/common/NavMenu"
 
 export default class Overview extends Component{
     render(){
@@ -24,6 +24,6 @@ const OverviewContainer = styled.div`
         display: flex;
         align-items: center;
         justify-content: center;
-        margin: 40px auto;
+        margin: 0 auto 40px auto;
     }
 `;

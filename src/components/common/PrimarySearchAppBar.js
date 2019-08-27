@@ -1,17 +1,53 @@
 import React, {Component} from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import Collapse from '@material-ui/core/Collapse';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
 import MenuIcon from '@material-ui/icons/Menu';
 import HomeIcon from '@material-ui/icons/Home';
+import ExpandLess from '@material-ui/icons/ExpandLess';
+import ExpandMore from '@material-ui/icons/ExpandMore';
+import StarBorder from '@material-ui/icons/StarBorder';
 import Button from '@material-ui/core/Button';
 import SearchIcon from '@material-ui/icons/Search';
+import LanguageIcon from '@material-ui/icons/Language';
 import LoginDialog from "./LoginDialog";
 import RegisterDialog from "./RegisterDialog";
 
 class PrimarySearchAppBar extends Component{
+    constructor(props) {
+        super(props);
+        this.state = {
+            showLang: false,
+            showMub: false
+        }
+    }
+    openLangMenu = () => {
+        this.setState({showLang: !this.state.showLang});
+    }
+    closeLangMenu = () => {
+        this.setState({showLang: false});
+    }
+    toggleMub = () => {
+        this.setState({showMub: !this.state.showMub});
+    }
+    closeMub = () => {
+        this.setState({showMub: false});
+    }
+    openMubDropdown = () => {
+        this.setState({showMubDropdown: !this.state.showMubDropdown});
+    }
+    closeMubDropdown = () => {
+        this.setState({showMubDropdown: false});
+    }
+
+
     render() {
         return (
             <div style={classes.appbar}>
@@ -24,18 +60,53 @@ class PrimarySearchAppBar extends Component{
                             <IconButton color="inherit" >
                                 <HomeIcon />
                             </IconButton>
-                            <IconButton
-                                style={classes.menuButton}
-                                color="inherit"
-                            >
-                                <MenuIcon />
-                            </IconButton>
+                            <div style={{position: "relative"}}>
+                                <Button
+                                    style={classes.menuButton}
+                                    color="inherit"
+                                    onClick={this.toggleMub}
+                                >
+                                    模板
+                                    <MenuIcon />
+                                    {
+                                        this.state.showMub ?
+                                            <nav style={{width: 200, position: "absolute", top: 50, left: -30, "background-color": "#fff", color: "#000"}} >
+                                                <List>
+                                                    <ListItem button >
+                                                        <ListItemIcon>
+                                                            <StarBorder />
+                                                        </ListItemIcon>
+                                                        <ListItemText primary="模板 1" />
+                                                    </ListItem>
+                                                    <ListItem button  onClick={this.openMubDropdown}>
+                                                        <ListItemIcon>
+                                                            <StarBorder />
+                                                        </ListItemIcon>
+                                                        <ListItemText primary="模板 2" />
+                                                        {this.state.showMubDropdown ? <ExpandLess /> : <ExpandMore />}
+                                                    </ListItem>
+                                                    <Collapse component="li" in={this.state.showMubDropdown} timeout="auto" unmountOnExit>
+                                                        <List disablePadding>
+                                                            <ListItem buttononClick={this.closeMubDropdown}>
+                                                                <ListItemIcon>
+                                                                    <StarBorder />
+                                                                </ListItemIcon>
+                                                                <ListItemText primary="模板 2.1" />
+                                                            </ListItem>
+                                                        </List>
+                                                    </Collapse>
+                                                </List>
+                                            </nav>
+                                            : null
+                                    }
+                                </Button>
+                            </div>
                             <div style={classes.search} >
                                 <IconButton style={classes.searchIcon} >
                                     <SearchIcon color="inherit"/>
                                 </IconButton>
                                 <InputBase
-                                    placeholder="Search…"
+                                    placeholder="搜索…"
                                     classes={{
                                         root: "inputRoot",
                                         input: "inputInput",
@@ -55,6 +126,22 @@ class PrimarySearchAppBar extends Component{
                                 <Button color="inherit" >
                                     个人中心
                                 </Button>
+                                <IconButton color="inherit" style={{position: "relative"}}>
+                                    <LanguageIcon onClick={this.openLangMenu} />
+                                    {
+                                        this.state.showLang ?
+                                            <nav style={{width: 100, position: "absolute", top: 50, right: -30, "background-color": "#fff", color: "#000"}} >
+                                                <List disablePadding>
+                                                    <ListItem buttononClick={this.closeMubDropdown}>
+                                                        <ListItemText primary="中文" />
+                                                    </ListItem>
+                                                    <ListItem buttononClick={this.closeMubDropdown}>
+                                                        <ListItemText primary="English" />
+                                                    </ListItem>
+                                                </List>
+                                            </nav> : null
+                                    }
+                                </IconButton>
                             </div>
                         </Toolbar>
                     </div>
@@ -72,6 +159,7 @@ const classes = {
         "flex-grow": 1,
         top: 0,
         bottom: "auto",
+        height: "64px"
     },
     wrapper: {
         width: "1280px",

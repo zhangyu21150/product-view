@@ -6,9 +6,8 @@ import Login from "./components/login/Login";
 import Register from "./components/register/Register";
 import Overview from "./components/overview/Overview";
 import Detail from "./components/detail/Detail";
-import Upload from "./components/upload/Upload";
+import UploadMu from "./components/upload/UploadMu";
 import PersonalCenter from "./components/personalcenter/PersonalCenter";
-import ProHeader from "./components/common/ProHeader";
 import ProFooter from "./components/common/ProFooter";
 import PrimarySearchAppBar from "./components/common/PrimarySearchAppBar";
 
@@ -28,21 +27,20 @@ const AuthRoute = ({component: Component, ...rest}) => (
 
 class App extends Component {
   render() {
+      let c_h
     return (
         <Router history={history}>
             <AppContainer >
                 <PrimarySearchAppBar />
-                <ProHeader />
                 <AppContent>
                     {/*<IndexRoute component={Home}/>*/}
                     <Route exact path="/login" component={Login}/>
                     <Route exact path="/register" component={Register}/>
                     <Route path="/overview" component={Overview}/>
                     <Route path="/detail" component={Detail}/>
-                    <AuthRoute path="/upload" component={Upload}/>
-                    <AuthRoute path="/personalcenter" component={PersonalCenter}/>
+                    <Route path="/upload" component={UploadMu}/>
+                    <Route path="/personalcenter" component={PersonalCenter}/>
                 </AppContent>
-                <ProFooter />
             </AppContainer>
         </Router>
     )
@@ -56,8 +54,11 @@ const AppContainer = styled.div`
     display: flex;
     flex-direction: column;
     overflow-y: auto;
+    overflow-x: hidden;
 `;
 const AppContent = styled.div`
     width: 1240px;
-    margin: 0 auto;
+    min-height: calc(100% - 200px); 
+    margin: 0 auto; 
+    padding: 64px 0;
 `;
