@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import logo from "../../assets/logo.png";
-import LoginDialog from "../common/LoginDialog"
-import RegisterDialog from "../common/RegisterDialog"
+import LoginDialog from "../login/LoginDialog"
+import RegisterDialog from "../register/RegisterDialog"
 import {connect} from "react-redux";
 //todo fix logo path
 

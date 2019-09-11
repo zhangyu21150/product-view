@@ -1,10 +1,10 @@
 {
   "login": {
-    "uri": "/login",
+    "uri": "/user/login",
     "method": "POST",
     "headers": {
-      "Accept": "application/json",
-      "content-type": "application/json"
+      "Accept": "text/html",
+      "content-type": "text/html"
     }
   }
 }

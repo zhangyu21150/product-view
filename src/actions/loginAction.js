@@ -27,13 +27,13 @@ export function loginLoading(bool){
 }
 
 function setSessionStorage(response){
-    sessionStorage.setItem("username", response.username);
+    sessionStorage.setItem("authored", response.success);
 }
 
 export function fetchLogin(username, password, callback) {
     return  dispatch => {
         dispatch(loginLoading(true));
-        let body = {"username": username, "password": password};
+        let body = {"mobile": username, "pwd": password, verCode: ""};
         fetch(getURL("login"), getParams("login", body))
             .then(response => {
                 dispatch(loginLoading(false));

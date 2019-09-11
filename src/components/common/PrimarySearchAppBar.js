@@ -3,26 +3,24 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import Collapse from '@material-ui/core/Collapse';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
 import MenuIcon from '@material-ui/icons/Menu';
 import HomeIcon from '@material-ui/icons/Home';
-import ExpandLess from '@material-ui/icons/ExpandLess';
-import ExpandMore from '@material-ui/icons/ExpandMore';
-import StarBorder from '@material-ui/icons/StarBorder';
 import Button from '@material-ui/core/Button';
 import SearchIcon from '@material-ui/icons/Search';
 import LanguageIcon from '@material-ui/icons/Language';
-import LoginDialog from "./LoginDialog";
-import RegisterDialog from "./RegisterDialog";
+import LoginDialog from "components/login/LoginDialog";
+import RegisterDialog from "components/register/RegisterDialog";
+import ModelList from  "components/common/ModelList";
 
 class PrimarySearchAppBar extends Component{
     constructor(props) {
         super(props);
+        this._loginDialog = '';
+        this._registerDialog = '';
         this.state = {
             showLang: false,
             showMub: false
@@ -46,7 +44,20 @@ class PrimarySearchAppBar extends Component{
     closeMubDropdown = () => {
         this.setState({showMubDropdown: false});
     }
+    componentDidMount() {
+    }
+    onBtnClick = e =>{
+        let id = e.target.parentNode.id;
+        if(id === "login"){
+            this._loginDialog.showLoginDialog();
+        }else if(id === "register"){
+            this._registerDialog.showRegisterDialog();
+        }else if(id === "upload"){
+            this._registerDialog.showRegisterDialog();
+        }else if(id === "personalcenter"){
 
+        }
+    }
 
     render() {
         return (
@@ -70,32 +81,8 @@ class PrimarySearchAppBar extends Component{
                                     <MenuIcon />
                                     {
                                         this.state.showMub ?
-                                            <nav style={{width: 200, position: "absolute", top: 50, left: -30, "background-color": "#fff", color: "#000"}} >
-                                                <List>
-                                                    <ListItem button >
-                                                        <ListItemIcon>
-                                                            <StarBorder />
-                                                        </ListItemIcon>
-                                                        <ListItemText primary="模板 1" />
-                                                    </ListItem>
-                                                    <ListItem button  onClick={this.openMubDropdown}>
-                                                        <ListItemIcon>
-                                                            <StarBorder />
-                                                        </ListItemIcon>
-                                                        <ListItemText primary="模板 2" />
-                                                        {this.state.showMubDropdown ? <ExpandLess /> : <ExpandMore />}
-                                                    </ListItem>
-                                                    <Collapse component="li" in={this.state.showMubDropdown} timeout="auto" unmountOnExit>
-                                                        <List disablePadding>
-                                                            <ListItem buttononClick={this.closeMubDropdown}>
-                                                                <ListItemIcon>
-                                                                    <StarBorder />
-                                                                </ListItemIcon>
-                                                                <ListItemText primary="模板 2.1" />
-                                                            </ListItem>
-                                                        </List>
-                                                    </Collapse>
-                                                </List>
+                                            <nav style={{width: 200, position: "absolute", top: 50, left: -30, "backgroundColor": "#fff", color: "#000"}} >
+                                               <ModelList />
                                             </nav>
                                             : null
                                     }
@@ -113,17 +100,17 @@ class PrimarySearchAppBar extends Component{
                                     }}
                                 />
                             </div>
-                            <div style={classes.sectionDesktop}>
-                                <Button color="inherit" >
+                            <div style={classes.sectionDesktop} onClick={this.onBtnClick}>
+                                <Button color="inherit" id="login" >
                                     登录
                                 </Button>
-                                <Button color="inherit" >
+                                <Button color="inherit" id="register" >
                                     注册
                                 </Button>
-                                <Button color="inherit" >
+                                <Button color="inherit" id="upload" >
                                     上传
                                 </Button>
-                                <Button color="inherit" >
+                                <Button color="inherit" id="personalcenter" >
                                     个人中心
                                 </Button>
                                 <IconButton color="inherit" style={{position: "relative"}}>
@@ -146,8 +133,8 @@ class PrimarySearchAppBar extends Component{
                         </Toolbar>
                     </div>
                 </AppBar>
-                <LoginDialog  />
-                <RegisterDialog refs="_registerDailog"/>
+                <LoginDialog onRef={login => {this._loginDialog = login}} />
+                <RegisterDialog onRef={reg => {this._registerDialog = reg}}/>
             </div>
         );
     }
@@ -156,46 +143,46 @@ class PrimarySearchAppBar extends Component{
 export default PrimarySearchAppBar;
 const classes = {
     appbar: {
-        "flex-grow": 1,
+        flexGrow: 1,
         top: 0,
         bottom: "auto",
         height: "64px"
     },
     wrapper: {
         width: "1280px",
-        "margin-right": "auto",
-        "margin-left": "auto"
+        marginRight: "auto",
+        marginLeft: "auto"
     },
     title: {
         display: 'block',
         marginRight: "16px",
     },
     menuButton: {
-        "margin-right": "16px"
+        marginRight: "16px"
     },
     search: {
         color: "#fff",
         position: 'relative',
-        "display": "flex",
-        "flex-direction": "row",
-        "border-radius": "4px",
-        "background-color": "#fff",
+        display: "flex",
+        flexDirection: "row",
+        borderRadius: "4px",
+        backgroundColor: "#fff",
         "&:hover": {
-            "background-color": "#fff",
+            backgroundColor: "#fff",
         },
-        "margin-right": "16px",
-        "margin-left": 0,
+        marginRight: "16px",
+        marginLeft: 0,
         width: "250px",
         opacity: 0.2
 
      },
     searchIcon: {
         width: "56px",
-        "line-height": "60px",
-        "padding": 0,
+        lineHeight: "60px",
+        padding: 0,
         display: 'flex',
-        "align-items": 'center',
-        "justify-content": 'center'
+        alignItems: 'center',
+        justifyContent: 'center'
     },
     inputRoot: {
         color: 'inherit',
@@ -205,6 +192,6 @@ const classes = {
         width: "200px",
     },
     sectionDesktop: {
-        "margin-left": "auto"
+        "marginLeft": "auto"
     }
 };

@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
-import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogTitle from '@material-ui/core/DialogTitle';
+import Button from '@material-ui/core/Button/index';
+import TextField from '@material-ui/core/TextField/index';
+import Dialog from '@material-ui/core/Dialog/index';
+import DialogActions from '@material-ui/core/DialogActions/index';
+import DialogContent from '@material-ui/core/DialogContent/index';
+import DialogTitle from '@material-ui/core/DialogTitle/index';
 
 export default class RegisterDialog extends Component{
     constructor(props){
@@ -22,6 +22,11 @@ export default class RegisterDialog extends Component{
         this.setState({
             "showRegister": false
         })
+    }
+    componentDidMount() {
+        if(this.props.onRef){
+            this.props.onRef(this);
+        }
     }
     render() {
         return (

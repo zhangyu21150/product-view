@@ -1,12 +1,26 @@
 import React, {Component} from 'react';
-import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogTitle from '@material-ui/core/DialogTitle';
+import Button from '@material-ui/core/Button/index';
+import TextField from '@material-ui/core/TextField/index';
+import Dialog from '@material-ui/core/Dialog/index';
+import DialogActions from '@material-ui/core/DialogActions/index';
+import DialogContent from '@material-ui/core/DialogContent/index';
+import DialogTitle from '@material-ui/core/DialogTitle/index';
+import { fetchLogin } from "actions/loginAction";
+import { connect } from "react-redux";
 
-export default class LoginDialog extends Component{
+const mapStateToProps = state =>{
+    return {
+        isLogin: state.loginSession.data
+    }
+}
+
+const mapDispatchToProps = dispatch =>{
+    return {
+        login: (username, password, callback) => dispatch(fetchLogin(username, password, callback))
+    }
+}
+
+class LoginDialog extends Component{
     constructor(props){
         super(props);
         this.state = {
@@ -24,7 +38,28 @@ export default class LoginDialog extends Component{
         })
     }
     onLogin = () => {
-
+        let username = this.state.username;
+        let passwd = this.state.password;
+        this.props.login(username, passwd, this.loginCallback);
+    }
+    loginCallback = status => {
+        if(status == "200"){
+            console.log(this.props.isLogin);
+        }else{
+            //todo error message
+        }
+    }
+    componentDidMount() {
+        if(this.props.onRef){
+            this.props.onRef(this);
+        }
+    }
+    onUserInput = e => {
+        let key = e.target.id;
+        let val = e.target.value;
+        this.setState({
+            [key]: val
+        })
     }
     render(){
         return (
@@ -38,6 +73,7 @@ export default class LoginDialog extends Component{
                         label="用户名"
                         type="text"
                         fullWidth
+                        onChange={event => this.onUserInput(event)}
                     />
                     <TextField
                         autoFocus
@@ -46,6 +82,7 @@ export default class LoginDialog extends Component{
                         label="密码"
                         type="password"
                         fullWidth
+                        onChange={event => this.onUserInput(event)}
                     />
                 </DialogContent>
                 <DialogActions>
@@ -60,3 +97,5 @@ export default class LoginDialog extends Component{
         );
     }
 }
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoginDialog);

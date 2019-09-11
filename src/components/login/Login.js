@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { connect} from "react-redux";
-import history from "../../history";
 import { fetchLogin } from "../../actions/loginAction";
-import loginBg from "../../assets/loginbg.jpg";
 
 const mapStateToProps = state =>{
     return {

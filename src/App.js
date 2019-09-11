@@ -25,15 +25,19 @@ const AuthRoute = ({component: Component, ...rest}) => (
     />
 );
 
+const ROUTE_PATH = ["overview", "detail", "upload", "personalcenter"];
 class App extends Component {
   render() {
-      let c_h
+      let uri = window.location.pathname;
+      uri = uri.split("/")[1];
+      let showHeader = ROUTE_PATH.includes(uri);
     return (
         <Router history={history}>
             <AppContainer >
-                <PrimarySearchAppBar />
+                {showHeader ? <PrimarySearchAppBar /> : null}
                 <AppContent>
                     {/*<IndexRoute component={Home}/>*/}
+                    <Route exact path="/" component={Login}/>
                     <Route exact path="/login" component={Login}/>
                     <Route exact path="/register" component={Register}/>
                     <Route path="/overview" component={Overview}/>
