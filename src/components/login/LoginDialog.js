@@ -10,7 +10,7 @@ import { connect } from "react-redux";
 
 const mapStateToProps = state =>{
     return {
-        isLogin: state.loginSession.data
+        isLogin: state.loginSession.data.success
     }
 }
 
@@ -42,9 +42,11 @@ class LoginDialog extends Component{
         let passwd = this.state.password;
         this.props.login(username, passwd, this.loginCallback);
     }
-    loginCallback = status => {
-        if(status == "200"){
-            console.log(this.props.isLogin);
+    loginCallback = success => {
+        if(success){
+            this.setState({
+                show: false
+            });
         }else{
             //todo error message
         }

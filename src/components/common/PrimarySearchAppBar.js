@@ -15,6 +15,22 @@ import LanguageIcon from '@material-ui/icons/Language';
 import LoginDialog from "components/login/LoginDialog";
 import RegisterDialog from "components/register/RegisterDialog";
 import ModelList from  "components/common/ModelList";
+import { connect } from "react-redux";
+import { loginSuccess, logoutSuccess } from "actions/loginAction";
+
+const mapStateToProps = state => {
+    return {
+        isLogin: state.loginSession.data.success,
+        username: state.loginSession.username
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        loginSuccess: (data, username) => dispatch(loginSuccess(data, username)),
+        logoutSuccess: () => dispatch(logoutSuccess())
+    }
+}
 
 class PrimarySearchAppBar extends Component{
     constructor(props) {
@@ -45,6 +61,12 @@ class PrimarySearchAppBar extends Component{
         this.setState({showMubDropdown: false});
     }
     componentDidMount() {
+        let username = sessionStorage.getItem("authentication");
+        let data = {};
+        data.success = !!username;
+        if(username){
+            this.props.loginSuccess(data, username);
+        }
     }
     onBtnClick = e =>{
         let id = e.target.parentNode.id;
@@ -52,10 +74,15 @@ class PrimarySearchAppBar extends Component{
             this._loginDialog.showLoginDialog();
         }else if(id === "register"){
             this._registerDialog.showRegisterDialog();
-        }else if(id === "upload"){
-            this._registerDialog.showRegisterDialog();
+        }else if(id === "logout"){
+            this.props.logoutSuccess();
         }else if(id === "personalcenter"){
 
+        }
+    }
+    shouldComponentUpdate(nextProps, nextState, nextContext) {
+        if(nextProps.isLogin !== this.props.isLogin){
+            return true;
         }
     }
 
@@ -101,18 +128,33 @@ class PrimarySearchAppBar extends Component{
                                 />
                             </div>
                             <div style={classes.sectionDesktop} onClick={this.onBtnClick}>
-                                <Button color="inherit" id="login" >
-                                    登录
-                                </Button>
-                                <Button color="inherit" id="register" >
-                                    注册
-                                </Button>
+                                {
+                                    !this.props.isLogin ?
+                                        <span>
+                                            <Button color="inherit" id="login" >
+                                                登录
+                                            </Button>
+                                            <Button color="inherit" id="register" >
+                                                注册
+                                            </Button>
+                                        </span>
+                                        : null
+                                }
                                 <Button color="inherit" id="upload" >
                                     上传
                                 </Button>
-                                <Button color="inherit" id="personalcenter" >
-                                    个人中心
-                                </Button>
+                                {
+                                    this.props.isLogin ?
+                                        <span>
+                                            <Button color="inherit" id="personalcenter" >
+                                            {this.props.username}
+                                        </Button>
+                                        <Button color="inherit" id="logout" >
+                                            注销
+                                         </Button>
+                                        </span>
+                                        : null
+                                }
                                 <IconButton color="inherit" style={{position: "relative"}}>
                                     <LanguageIcon onClick={this.openLangMenu} />
                                     {
@@ -140,7 +182,7 @@ class PrimarySearchAppBar extends Component{
     }
 }
 
-export default PrimarySearchAppBar;
+export default connect(mapStateToProps, mapDispatchToProps)(PrimarySearchAppBar);
 const classes = {
     appbar: {
         flexGrow: 1,

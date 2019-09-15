@@ -1,6 +1,6 @@
 {
   "login": {
-    "uri": "/user/login",
+    "uri": "user/login",
     "method": "POST",
     "headers": {
       "Accept": "text/html",
