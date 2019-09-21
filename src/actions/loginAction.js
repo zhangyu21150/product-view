@@ -34,7 +34,7 @@ export function loginLoading(bool, username){
 }
 
 function setSessionStorage(username){
-    sessionStorage.setItem("authentication", username);
+    sessionStorage.setItem("username", username);
 }
 
 export function fetchLogin(username, password, callback) {
@@ -62,5 +62,25 @@ export function fetchLogin(username, password, callback) {
             }).catch(error => {
                 console.error(error);
             });
+    }
+}
+
+export function fetchLogout(username) {
+    return  dispatch => {
+        let body = {"mobile": username};
+        fetch(getURL("logout"), getParams("logout", body))
+            .then(response => {
+                if(response.ok){
+                    return response.json();
+                }
+                throw new Error("logout request error");
+            })
+            .then(response => {
+                if(response.success){
+                    dispatch(logoutSuccess());
+                }
+            }).catch(error => {
+            console.error(error);
+        });
     }
 }

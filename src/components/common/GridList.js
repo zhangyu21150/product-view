@@ -1,42 +1,6 @@
 import React, {Component} from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
-import GridListTile from '@material-ui/core/GridListTile';
-import GridListTileBar from '@material-ui/core/GridListTileBar';
-import ListSubheader from '@material-ui/core/ListSubheader';
-import IconButton from '@material-ui/core/IconButton';
 import ProductCard from "components/common/ProductCard";
-
-
-const titleData = [
-    {
-        img: "image" ,
-        title: "title1",
-        author: "author"
-    },
-    {
-        img: "image" ,
-        title: "title1",
-        author: "author"
-    },
-    {
-        img: "image" ,
-        title: "title1",
-        author: "author"
-    },{
-        img: "image" ,
-        title: "title1",
-        author: "author"
-    },{
-        img: "image" ,
-        title: "title1",
-        author: "author"
-    },{
-        img: "image" ,
-        title: "title1",
-        author: "author"
-    }
-];
 
 /**
  * The example data is structured as follows:
@@ -58,118 +22,11 @@ const titleData = [
 export default class TitlebarGridList extends Component{
     constructor(props) {
         super(props);
-        this.tileData = [
-            {
-                img: "../../assets/camera.jpg" ,
-                title: "title1",
-                author: "author"
-            },
-            {
-                img: "image" ,
-                title: "title1",
-                author: "author"
-            },
-            {
-                img: "image" ,
-                title: "title1",
-                author: "author"
-            },{
-                img: "image" ,
-                title: "title1",
-                author: "author"
-            },{
-                img: "image" ,
-                title: "title1",
-                author: "author"
-            },{
-                img: "image" ,
-                title: "title1",
-                author: "author"
-            },{
-                img: "../../assets/camera.jpg" ,
-                title: "title1",
-                author: "author"
-            },
-            {
-                img: "image" ,
-                title: "title1",
-                author: "author"
-            },
-            {
-                img: "image" ,
-                title: "title1",
-                author: "author"
-            },{
-                img: "image" ,
-                title: "title1",
-                author: "author"
-            },{
-                img: "image" ,
-                title: "title1",
-                author: "author"
-            },{
-                img: "image" ,
-                title: "title1",
-                author: "author"
-            },{
-                img: "../../assets/camera.jpg" ,
-                title: "title1",
-                author: "author"
-            },
-            {
-                img: "image" ,
-                title: "title1",
-                author: "author"
-            },
-            {
-                img: "image" ,
-                title: "title1",
-                author: "author"
-            },{
-                img: "image" ,
-                title: "title1",
-                author: "author"
-            },{
-                img: "image" ,
-                title: "title1",
-                author: "author"
-            },{
-                img: "image" ,
-                title: "title1",
-                author: "author"
-            },{
-                img: "../../assets/camera.jpg" ,
-                title: "title1",
-                author: "author"
-            },
-            {
-                img: "image" ,
-                title: "title1",
-                author: "author"
-            },
-            {
-                img: "image" ,
-                title: "title1",
-                author: "author"
-            },{
-                img: "image" ,
-                title: "title1",
-                author: "author"
-            },{
-                img: "image" ,
-                title: "title1",
-                author: "author"
-            },{
-                img: "image" ,
-                title: "title1",
-                author: "author"
-            }
-        ];
         this.useStyles = {
             root: {
                 display: 'flex',
                 flexWrap: 'wrap',
-                justifyContent: 'space-between'
+                justifyContent: 'flex-start'
             },
             gridList: {
                 width: 500,
@@ -185,12 +42,14 @@ export default class TitlebarGridList extends Component{
         const classes = this.useStyles;
         return (
             <div>
-                <GridList cellHeight={250} cols={8} style={classes.root}>
-                    {this.tileData.map((tile, index) => (
-                        <div key={tile.img + index} style={{"marginBottom": "30px", "width": "250px"}}>
-                            <ProductCard />
-                        </div>
-                    ))}
+                <GridList cellHeight={250} cols={8} style={classes.root} >
+                    {this.props.tileData.map((tile, index) => {
+                        let gap = (((index + 1) % 4) === 0) ? "0px" : "74px";
+                        return (<div key={tile.img + index}
+                             style={{"marginBottom": "30px", "marginRight": `${gap}`, "width": "250px"}}>
+                            <ProductCard card={tile}/>
+                        </div>)
+                    })}
                 </GridList>
             </div>
         );

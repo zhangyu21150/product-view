@@ -1,0 +1,824 @@
+[{
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "66",
+    "pid": "4",
+    "state": "open",
+    "text": "前门防水膜总成"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "74",
+    "pid": "8",
+    "state": "closed",
+    "text": "公路"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "19",
+    "pid": "2",
+    "state": "open",
+    "text": "前挡板侧支撑件总成装置"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "82",
+    "pid": "79",
+    "state": "open",
+    "text": "综合体"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "27",
+    "pid": "2",
+    "state": "open",
+    "text": "后门附件"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "90",
+    "pid": "74",
+    "state": "open",
+    "text": "涵洞"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "35",
+    "pid": "4",
+    "state": "open",
+    "text": "装饰标牌装置"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "51",
+    "pid": "4",
+    "state": "open",
+    "text": "轮罩挡泥板总成装置"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "98",
+    "pid": "92",
+    "state": "open",
+    "text": "标线"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "43",
+    "pid": "4",
+    "state": "open",
+    "text": "减震垫装置"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "12",
+    "pid": "2",
+    "state": "open",
+    "text": "自车身总成"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "59",
+    "pid": "4",
+    "state": "open",
+    "text": "L童约束保护系统"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "106",
+    "pid": "10",
+    "state": "open",
+    "text": "T1"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "67",
+    "pid": "4",
+    "state": "open",
+    "text": "左前座椅装置"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "75",
+    "pid": "8",
+    "state": "open",
+    "text": "地质"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "20",
+    "pid": "2",
+    "state": "open",
+    "text": "仪表板横梁总成装置"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "83",
+    "pid": "74",
+    "state": "open",
+    "text": "路基"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "28",
+    "pid": "2",
+    "state": "open",
+    "text": "发动机盖附件"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "91",
+    "pid": "74",
+    "state": "open",
+    "text": "隧道"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "36",
+    "pid": "4",
+    "state": "open",
+    "text": "车辆识别代号标牌装置"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "52",
+    "pid": "4",
+    "state": "open",
+    "text": "后窗台装置"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "99",
+    "pid": "93",
+    "state": "open",
+    "text": "上部"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "44",
+    "pid": "4",
+    "state": "open",
+    "text": "立柱装置"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "107",
+    "pid": "11",
+    "state": "open",
+    "text": "T1"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "60",
+    "pid": "4",
+    "state": "open",
+    "text": "前门护板装置"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "68",
+    "pid": "4",
+    "state": "open",
+    "text": "右前座椅装置"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "76",
+    "pid": "8",
+    "state": "open",
+    "text": "测绘"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "21",
+    "pid": "2",
+    "state": "open",
+    "text": "仪表板管梁安装支架总成装置"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "37",
+    "pid": "4",
+    "state": "open",
+    "text": "堵盖系统"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "84",
+    "pid": "78",
+    "state": "open",
+    "text": "轨道"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "29",
+    "pid": "4",
+    "state": "open",
+    "text": "发动机下罩总成装置"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "100",
+    "pid": "93",
+    "state": "open",
+    "text": "下部"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "45",
+    "pid": "4",
+    "state": "open",
+    "text": "侧围角饰装置"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "92",
+    "pid": "72",
+    "state": "closed",
+    "text": "城市道路"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "53",
+    "pid": "4",
+    "state": "open",
+    "text": "后行李箱护板装置"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "61",
+    "pid": "4",
+    "state": "open",
+    "text": "前车门玻璃装置"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "69",
+    "pid": "4",
+    "state": "open",
+    "text": "后座椅装置"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "77",
+    "pid": "8",
+    "state": "open",
+    "text": "钢结构桥"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "22",
+    "pid": "2",
+    "state": "open",
+    "text": "油箱检修口盖总成装置"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "38",
+    "pid": "4",
+    "state": "open",
+    "text": "地毯装置"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "85",
+    "pid": "78",
+    "state": "open",
+    "text": "铁路桥"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "30",
+    "pid": "4",
+    "state": "open",
+    "text": "前保险杠总成装置"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "93",
+    "pid": "72",
+    "state": "closed",
+    "text": "城市高架"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "101",
+    "pid": "93",
+    "state": "open",
+    "text": "附属物"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "46",
+    "pid": "4",
+    "state": "open",
+    "text": "车身外饰装饰件总成装置"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "54",
+    "pid": "4",
+    "state": "open",
+    "text": "后侧围通风框总成装置"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "62",
+    "pid": "4",
+    "state": "open",
+    "text": "爱冲中块装置"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "23",
+    "pid": "2",
+    "state": "open",
+    "text": "行李箱附件"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "70",
+    "pid": "4",
+    "state": "open",
+    "text": "内后视镜装置"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "15",
+    "pid": "2",
+    "state": "open",
+    "text": "排气管防刮杆总成装置"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "78",
+    "pid": "8",
+    "state": "closed",
+    "text": "铁路"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "39",
+    "pid": "4",
+    "state": "open",
+    "text": "阻尼板装置"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "86",
+    "pid": "78",
+    "state": "open",
+    "text": "路基"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "31",
+    "pid": "4",
+    "state": "open",
+    "text": "后保险杠总成装置"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "94",
+    "pid": "73",
+    "state": "open",
+    "text": "洞门"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "102",
+    "pid": "9",
+    "state": "closed",
+    "text": "模具"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "47",
+    "pid": "4",
+    "state": "open",
+    "text": "顶盖饰条装置"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "55",
+    "pid": "4",
+    "state": "open",
+    "text": "顶棚内饰装置"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "63",
+    "pid": "4",
+    "state": "open",
+    "text": "后门护板装置"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "24",
+    "pid": "2",
+    "state": "open",
+    "text": "后置物台支架总成装置"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "71",
+    "pid": "4",
+    "state": "open",
+    "text": "外后视镜装置"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "79",
+    "pid": "8",
+    "state": "closed",
+    "text": "民用建筑"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "87",
+    "pid": "78",
+    "state": "open",
+    "text": "站场"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "32",
+    "pid": "4",
+    "state": "open",
+    "text": "方向盘系统"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "95",
+    "pid": "73",
+    "state": "open",
+    "text": "锚杆"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "40",
+    "pid": "4",
+    "state": "open",
+    "text": "风挡玻璃装置"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "103",
+    "pid": "9",
+    "state": "open",
+    "text": "检具"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "48",
+    "pid": "4",
+    "state": "open",
+    "text": "牌照灯饰板总成装置"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "56",
+    "pid": "4",
+    "state": "open",
+    "text": "天窗装置"
+}, {"attributes": {}, "checked": false, "iconCls": "", "id": "1", "state": "closed", "text": "汽车"}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "64",
+    "pid": "4",
+    "state": "open",
+    "text": "后车门玻璃装置"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "25",
+    "pid": "2",
+    "state": "open",
+    "text": "天窗安装支架总成装置"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "72",
+    "pid": "8",
+    "state": "closed",
+    "text": "市政"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "80",
+    "pid": "79",
+    "state": "open",
+    "text": "场馆"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "88",
+    "pid": "78",
+    "state": "open",
+    "text": "四电"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "33",
+    "pid": "4",
+    "state": "open",
+    "text": "说明牌装置"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "96",
+    "pid": "73",
+    "state": "open",
+    "text": "备品室"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "41",
+    "pid": "4",
+    "state": "open",
+    "text": "前通风盖板装置"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "104",
+    "pid": "102",
+    "state": "open",
+    "text": "注塑模具"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "49",
+    "pid": "4",
+    "state": "open",
+    "text": "门槛装置"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "65",
+    "pid": "4",
+    "state": "open",
+    "text": "后门防水膜总成"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "57",
+    "pid": "4",
+    "state": "open",
+    "text": "安全带装置"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "2",
+    "pid": "1",
+    "state": "closed",
+    "text": "车身"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "26",
+    "pid": "2",
+    "state": "open",
+    "text": "前门附件"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "73",
+    "pid": "72",
+    "state": "closed",
+    "text": "城市隧道"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "18",
+    "pid": "2",
+    "state": "open",
+    "text": "组合通道盒支架总成装置"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "81",
+    "pid": "79",
+    "state": "open",
+    "text": "住宅"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "89",
+    "pid": "74",
+    "state": "open",
+    "text": "高速公路桥梁"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "34",
+    "pid": "4",
+    "state": "open",
+    "text": "铭牌"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "97",
+    "pid": "73",
+    "state": "open",
+    "text": "排水沟"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "42",
+    "pid": "4",
+    "state": "open",
+    "text": "副仪表板装置"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "50",
+    "pid": "4",
+    "state": "open",
+    "text": "黑膜装置"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "58",
+    "pid": "4",
+    "state": "open",
+    "text": "安全气装置"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "105",
+    "pid": "102",
+    "state": "open",
+    "text": "冲压模具"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "13",
+    "pid": "2",
+    "state": "open",
+    "text": "脱钩总成装置"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "icon_sys",
+    "id": "8",
+    "state": "closed",
+    "text": "土木"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "3",
+    "pid": "1",
+    "state": "open",
+    "text": "底盘"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "4",
+    "pid": "1",
+    "state": "closed",
+    "text": "内外饰"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "14",
+    "pid": "2",
+    "state": "open",
+    "text": "前地板链接板总成装置"
+}, {"attributes": {}, "checked": false, "iconCls": "", "id": "9", "state": "closed", "text": "机械"}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "5",
+    "pid": "1",
+    "state": "open",
+    "text": "动力总成"
+}, {"attributes": {}, "checked": false, "iconCls": "", "id": "10", "state": "closed", "text": "船舶"}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "6",
+    "pid": "1",
+    "state": "open",
+    "text": "电器"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "16",
+    "pid": "2",
+    "state": "open",
+    "text": "堵盖装置"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "7",
+    "pid": "1",
+    "state": "open",
+    "text": "仪表盘装置"
+}, {
+    "attributes": {},
+    "checked": false,
+    "iconCls": "",
+    "id": "17",
+    "pid": "2",
+    "state": "open",
+    "text": "空气室前板总成装置"
+}, {"attributes": {}, "checked": false, "iconCls": "", "id": "11", "state": "closed", "text": "高铁列车"}]

@@ -16,19 +16,20 @@ import LoginDialog from "components/login/LoginDialog";
 import RegisterDialog from "components/register/RegisterDialog";
 import ModelList from  "components/common/ModelList";
 import { connect } from "react-redux";
-import { loginSuccess, logoutSuccess } from "actions/loginAction";
+import { fetchLogout } from "actions/loginAction";
+import { fetchModelListTree } from "actions/modelListAction";
 
 const mapStateToProps = state => {
     return {
-        isLogin: state.loginSession.data.success,
-        username: state.loginSession.username
+        modelListTree: state.modelListTree.data,
+        isLogin: !!state.loginSession.username
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        loginSuccess: (data, username) => dispatch(loginSuccess(data, username)),
-        logoutSuccess: () => dispatch(logoutSuccess())
+        logoutSuccess: username => dispatch(fetchLogout(username)),
+        retrieveModelListTree: () => dispatch(fetchModelListTree())
     }
 }
 
@@ -61,13 +62,15 @@ class PrimarySearchAppBar extends Component{
         this.setState({showMubDropdown: false});
     }
     componentDidMount() {
-        let username = sessionStorage.getItem("authentication");
-        let data = {};
-        data.success = !!username;
-        if(username){
-            this.props.loginSuccess(data, username);
-        }
+        this.props.retrieveModelListTree();
     }
+    // shouldComponentUpdate(nextProps, nextState, nextContext) {
+    //     if(this.props.isLogin !== nextProps.isLogin || this.props.modelListTree !== nextProps.modelListTree){
+    //         return true;
+    //     }else {
+    //         return false;
+    //     }
+    // }
     onBtnClick = e =>{
         let id = e.target.parentNode.id;
         if(id === "login"){
@@ -75,18 +78,13 @@ class PrimarySearchAppBar extends Component{
         }else if(id === "register"){
             this._registerDialog.showRegisterDialog();
         }else if(id === "logout"){
-            this.props.logoutSuccess();
+            this.props.logoutSuccess(sessionStorage.getItem("username"));
         }else if(id === "personalcenter"){
 
         }
     }
-    shouldComponentUpdate(nextProps, nextState, nextContext) {
-        if(nextProps.isLogin !== this.props.isLogin){
-            return true;
-        }
-    }
-
     render() {
+        let username = sessionStorage.getItem("username");
         return (
             <div style={classes.appbar}>
                 <AppBar position="fixed" className="appbar">
@@ -109,7 +107,7 @@ class PrimarySearchAppBar extends Component{
                                     {
                                         this.state.showMub ?
                                             <nav style={{width: 200, position: "absolute", top: 50, left: -30, "backgroundColor": "#fff", color: "#000"}} >
-                                               <ModelList />
+                                               <ModelList modelList={this.props.modelListTree} />
                                             </nav>
                                             : null
                                     }
@@ -129,7 +127,7 @@ class PrimarySearchAppBar extends Component{
                             </div>
                             <div style={classes.sectionDesktop} onClick={this.onBtnClick}>
                                 {
-                                    !this.props.isLogin ?
+                                    !username ?
                                         <span>
                                             <Button color="inherit" id="login" >
                                                 登录
@@ -144,10 +142,10 @@ class PrimarySearchAppBar extends Component{
                                     上传
                                 </Button>
                                 {
-                                    this.props.isLogin ?
+                                    username ?
                                         <span>
                                             <Button color="inherit" id="personalcenter" >
-                                            {this.props.username}
+                                            { username }
                                         </Button>
                                         <Button color="inherit" id="logout" >
                                             注销

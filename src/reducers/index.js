@@ -1,8 +1,12 @@
 import { combineReducers } from "redux";
 import loginSession from "./loginReducer";
+import modelListTree from "./modelListReducer";
+import dataGrid from "./dataGridReducer";
 
 const appReducers = combineReducers({
-    loginSession
+    loginSession,
+    modelListTree,
+    dataGrid
 });
 
 const rootReducer = (state, action) => {

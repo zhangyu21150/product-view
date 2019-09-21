@@ -4,6 +4,10 @@ export function getHost(){
     return process.env["REACT_APP_" + process.env["REACT_APP_SERVER"] + "_HOST"];
 }
 
+export function getImgHost(){
+    return process.env["REACT_APP_" + process.env["REACT_APP_SERVER"] + "_IMG_HOST"];
+}
+
 export function getURL(key){
     return getHost() + process.env["REACT_APP_ROOT"] + api[key].uri
 }

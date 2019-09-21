@@ -1,6 +1,5 @@
 import React, {Component} from "react";
 import styled from "styled-components";
-import {modelList} from "util/ModelList";
 import MenuList from '@material-ui/core/MenuList';
 import MenuItem from '@material-ui/core/MenuItem';
 
@@ -48,7 +47,7 @@ class ModelList extends Component {
             <ModelListContainer>
                 <MenuList>
                     {
-                        modelList.map((item, index) => (<MenuItem key={`fstList_${index}`} onMouseOver={this.onListHover.bind(this, 0, item)}>{item.label}</MenuItem>))
+                        this.props.modelList ? this.props.modelList.map((item, index) => (<MenuItem key={`fstList_${index}`} onMouseOver={this.onListHover.bind(this, 0, item)}>{item.label}</MenuItem>)) : null
                     }
                 </MenuList>
                 {this.state.fstLevel}

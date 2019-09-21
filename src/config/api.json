@@ -6,5 +6,29 @@
       "Accept": "text/html",
       "content-type": "text/html"
     }
+  },
+  "logout": {
+    "uri": "user/loginOut",
+    "method": "POST",
+    "headers": {
+      "Accept": "text/html",
+      "content-type": "text/html"
+    }
+  },
+  "modelList": {
+    "uri": "temptype/allTree",
+    "method": "GET",
+    "headers": {
+      "Accept": "text/html",
+      "content-type": "text/html"
+    }
+  },
+  "overviewDataGird": {
+    "uri": "template/dataGrid",
+    "method": "GET",
+    "headers": {
+      "Accept": "text/html",
+      "content-type": "text/html"
+    }
   }
 }
